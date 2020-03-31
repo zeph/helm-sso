@@ -18,6 +18,14 @@ namespace: kube-system
 
 oauth2-proxy:
   # cherry-pick what you need from oauth2-proxy/values.yaml file
+  # https://github.com/oauth2-proxy/oauth2-proxy/issues/127#issuecomment-515446373
   config:
     existingSecret: helm-sso
-  
+    configFile: |-
+      provider = keycloak
+      email_domains = [ "*" ]
+      upstreams = [ "file:///dev/null" ]
+      http-address = 0.0.0.0:4180
+      login-url = https://<>/auth/realms/<>/protocol/openid-connect/auth
+      redeem-url = https://<>/auth/realms/<>/protocol/openid-connect/token
+      validate-url = https://<>/auth/realms/<>/protocol/openid-connect/userinfo
