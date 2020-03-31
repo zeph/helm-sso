@@ -1,0 +1,14 @@
+metadata:
+  name: oauth2-proxy
+spec:
+  destination:
+    namespace: kube-system
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    helm:
+      valueFiles:
+      - values.yaml
+    path: helm
+    repoURL: https://github.com/zeph/helm-sso.git
+    targetRevision: HEAD
