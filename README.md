@@ -10,4 +10,4 @@ $ argocd app create -f argocd.yaml
 > WARNING: (you need your own custom version of <br/>
 > argocd.yaml and values.yaml to get this really working)
 
-Also, you won't go far without and Ingress or a VirtualService
+Also, you won't go far without an Ingress or a VirtualService
